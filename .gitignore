@@ -1,2 +1,5 @@
-/cache/
-/config/development/
+# Ignore These Files
+
+
+*.html
+*.php
