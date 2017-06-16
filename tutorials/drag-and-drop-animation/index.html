@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Darlic Drag and Drop Animation</title>
+  <meta name="description" content="Darlic Profile">
+  <meta name="author" content="SGS Sandhu" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+  	#header{ 
+		width:100%; 
+		height:100%;
+	}
+	#header-left{ 
+		background:#f2f2f2; 
+		width:30%; 
+		float:left;
+		min-height:700px;
+	}
+	#header-right{ 
+		
+		background:#FFFFFF; 
+		width:70%; 
+		float:right;
+		min-height:700px;
+	}
+	
+	#header-content-right:before{
+		content:"";
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+	}
+	*/
+	#logo{
+		width: 160px;
+		top: 100px;
+		left: 50%;
+		margin-left: -80px;
+		height: 160px;
+		overflow: hidden;
+		z-index: 70;
+		position: absolute;
+	}
+	#logo img{
+		max-width:100%;
+	}
+	#title{
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		top: 280px;
+	}
+	#title h1{
+		color:#454545;
+		text-align:center;
+		font-size:60px;
+		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
+		font-weight: 500;
+		z-index:40;
+	}
+	#tagline{
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		top: 350px;
+	}
+	#tagline h2{
+		color:#666666;
+		text-align:center;
+		font-size:28px;
+		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
+		font-weight: 300;
+		z-index:40;
+	}
+	#tagline h3{
+		color:#666666;
+		text-align:center;
+		font-size:18px;
+		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
+		font-weight: 300;
+		z-index:40;
+	}
+	#intro{
+		width:90%;
+		color:#454545;
+		padding: 100px 5% 40px 5%;
+		text-align:left;
+		margin:0;
+		font-size:28px;
+		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
+		font-weight: 300;
+	}
+	.animation {
+    width: 800px;
+    height: 400px;
+    margin: 70px auto 0;
+    position: relative
+}
+.animation>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 43px;
+    border-radius: 4px
+}
+.animation .browser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 302px;
+    height: 240px;
+    box-shadow: 0 1px 2px 0 #fff
+}
+.animation .logo {
+    position: absolute;
+    bottom: 210px;
+    right: 240px;
+    width: 120px;
+    height: 45px;
+}
+.animation .box {
+    position: absolute;
+    bottom: 180px;
+    right: 223px;
+    width: 145px;
+    height: 120px
+}
+.animation .box-top {
+    background-color: #eff1f5;
+    position: absolute;
+    line-height: 101px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #8c97a5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    bottom: 180px;
+    right: 235px;
+    width: 131px;
+    height: 101px
+}
+.animation .header-drop {
+    opacity: 0;
+    background-color: #a5e8f0
+}
+.animation .body-drop {
+    opacity: 0;
+    background-color: #bce4af
+}
+.animation .column-drop {
+    opacity: 0;
+    background-color: #f4acf0
+}
+.animation .column-drop:after,
+.animation .column-drop:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: inherit
+}
+.animation .cursor {
+    opacity: 0;
+    position: absolute;
+    top: -120px;
+    left: -190px;
+    width: 40px;
+    height: 20px!important
+}
+.animation.active .header-drop {
+    opacity: 1;
+    animation: workflow-header-drop 12s infinite
+}
+.animation.active .body-drop {
+    opacity: 1;
+    animation: workflow-body-drop 12s infinite
+}
+.animation.active .column-drop {
+    opacity: 1;
+    animation: workflow-column-drop 12s infinite
+}
+.animation.active .column-drop:after,
+.animation.active .column-drop:before {
+    animation: workflow-column-drop-before 12s infinite
+}
+.animation.active .column-drop:after {
+    animation: workflow-column-drop-after 12s infinite
+}
+.animation.active .cursor {
+    opacity: 1;
+    animation: workflow-cursor 12s infinite
+}
+@keyframes workflow-header-drop {
+    0% {
+        transform: translate(485px, 135px)
+    }
+    6% {
+        transform: translate(465px)
+    }
+    12% {
+        transform: translate(120px, 40px);
+        width: 55px;
+        height: 43px
+    }
+    14%,
+    96% {
+        transform: translate(20px, 52px);
+        width: 263px;
+        height: 24px;
+        border-radius: 0;
+        opacity: 1
+    }
+    to {
+        transform: translate(20px, 52px);
+        width: 263px;
+        height: 24px;
+        border-radius: 0;
+        opacity: 0
+    }
+}
+@keyframes workflow-body-drop {
+    0%, 24% {
+        transform: translate(485px, 135px)
+    }
+    30% {
+        transform: translate(465px)
+    }
+    36% {
+        transform: translate(120px, 110px);
+        width: 55px;
+        height: 43px
+    }
+    38%,
+    96% {
+        transform: translate(19px, 90px);
+        width: 264px;
+        height: 79px;
+        border-radius: 0;
+        opacity: 1
+    }
+    to {
+        transform: translate(19px, 90px);
+        width: 264px;
+        height: 79px;
+        border-radius: 0;
+        opacity: 0
+    }
+}
+@keyframes workflow-column-drop {
+    0%, 48% {
+        transform: translate(485px, 135px)
+    }
+    54% {
+        transform: translate(465px)
+    }
+    60% {
+        transform: translate(120px, 180px);
+        width: 55px;
+        height: 43px
+    }
+    62%,
+    96% {
+        transform: translate(110px, 184px);
+        width: 80px;
+        height: 38px;
+        border-radius: 0;
+        opacity: 1
+    }
+    to {
+        transform: translate(110px, 184px);
+        width: 80px;
+        height: 38px;
+        border-radius: 0;
+        opacity: 0
+    }
+}
+@keyframes workflow-cursor {
+    0%, 24%, 48%, 80%, to {
+        transform: translate(695px, 275px)
+    }
+    6%,
+    18%,
+    30%,
+    42%,
+    54%,
+    66% {
+        transform: translate(675px, 140px)
+    }
+    12%,
+    13% {
+        transform: translate(330px, 180px)
+    }
+    36%,
+    37% {
+        transform: translate(330px, 250px)
+    }
+    60%,
+    61% {
+        transform: translate(330px, 320px)
+    }
+}
+@keyframes workflow-column-drop-before {
+    60% {
+        transform: translate(0);
+        opacity: 0
+    }
+    62%,
+    96% {
+        transform: translate(-92px);
+        opacity: 1
+    }
+    to {
+        transform: translate(-92px);
+        opacity: 0
+    }
+}
+@keyframes workflow-column-drop-after {
+    60% {
+        transform: translate(0);
+        opacity: 0
+    }
+    62%,
+    96% {
+        transform: translate(92px);
+        opacity: 1
+    }
+    to {
+        transform: translate(92px);
+        opacity: 0
+    }
+}
+		
+  </style>
+</head>
+<body>
+<header>
+	<div id="header">
+		<div id="header-left">
+		</div>
+		<div id="header-right"></div>
+		<div class="clear"></div>
+	</div>
+
+
+	<div id="header-content">
+		<div id="header-content-left">
+			<div id="logo">
+				<img src="assets/images/darlic_logo_symbol.png" />
+			</div>
+			<div id="title">
+				<h1>Darlic</h1>
+			</div>
+			<div id="tagline">
+				<h2>www.DARLIC.com</h2>
+				<h3>Create a web application without a pain</h3>
+			</div>
+		</div>
+		<div id="header-content-right">
+			<div id="intro"><span id="intro-content"></span>
+			</div>
+      <div class="animation active">
+        <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/browser.svg" class="browser" alt="Web Browser Frame">
+        <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/box.svg" class="box" alt="Box">
+
+        <span class="header-drop"></span>
+        <span class="body-drop"></span>
+        <span class="column-drop"></span>
+        <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/cursor.svg" class="cursor" alt="Mouse Cursor" width="32" height="32">
+        <div class="box-top"></div>
+        <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/darlic_logo_full.svg" class="logo" alt="Darlic Logo">
+      </div>
+		
+		</div>
+		<div class="clear"></div>
+	</div>
+</body>
+</html>
