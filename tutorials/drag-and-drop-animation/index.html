@@ -3,97 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Darlic Drag and Drop Animation</title>
-  <meta name="description" content="Darlic Profile">
+  <meta name="description" content="Darlic Drag and Drop Animation">
   <meta name="author" content="SGS Sandhu" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
-  	#header{ 
-		width:100%; 
-		height:100%;
-	}
-	#header-left{ 
-		background:#f2f2f2; 
-		width:30%; 
-		float:left;
-		min-height:700px;
-	}
-	#header-right{ 
-		
-		background:#FFFFFF; 
-		width:70%; 
-		float:right;
-		min-height:700px;
-	}
-	
-	#header-content-right:before{
-		content:"";
-		position:absolute;
-		top:0;
-		right:0;
-		bottom:0;
-		left:0;
-	}
-	*/
-	#logo{
-		width: 160px;
-		top: 100px;
-		left: 50%;
-		margin-left: -80px;
-		height: 160px;
-		overflow: hidden;
-		z-index: 70;
-		position: absolute;
-	}
-	#logo img{
-		max-width:100%;
-	}
-	#title{
-		text-align: center;
-		position: absolute;
-		width: 100%;
-		top: 280px;
-	}
-	#title h1{
-		color:#454545;
-		text-align:center;
-		font-size:60px;
-		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
-		font-weight: 500;
-		z-index:40;
-	}
-	#tagline{
-		text-align: center;
-		position: absolute;
-		width: 100%;
-		top: 350px;
-	}
-	#tagline h2{
-		color:#666666;
-		text-align:center;
-		font-size:28px;
-		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
-		font-weight: 300;
-		z-index:40;
-	}
-	#tagline h3{
-		color:#666666;
-		text-align:center;
-		font-size:18px;
-		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
-		font-weight: 300;
-		z-index:40;
-	}
-	#intro{
-		width:90%;
-		color:#454545;
-		padding: 100px 5% 40px 5%;
-		text-align:left;
-		margin:0;
-		font-size:28px;
-		font-family:"Open Sans", Arial, Helvetica, sans-serif ;
-		font-weight: 300;
-	}
-	.animation {
+.animation {
     width: 800px;
     height: 400px;
     margin: 70px auto 0;
@@ -343,30 +257,6 @@
 </head>
 <body>
 <header>
-	<div id="header">
-		<div id="header-left">
-		</div>
-		<div id="header-right"></div>
-		<div class="clear"></div>
-	</div>
-
-
-	<div id="header-content">
-		<div id="header-content-left">
-			<div id="logo">
-				<img src="assets/images/darlic_logo_symbol.png" />
-			</div>
-			<div id="title">
-				<h1>Darlic</h1>
-			</div>
-			<div id="tagline">
-				<h2>www.DARLIC.com</h2>
-				<h3>Create a web application without a pain</h3>
-			</div>
-		</div>
-		<div id="header-content-right">
-			<div id="intro"><span id="intro-content"></span>
-			</div>
       <div class="animation active">
         <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/browser.svg" class="browser" alt="Web Browser Frame">
         <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/box.svg" class="box" alt="Box">
@@ -378,9 +268,5 @@
         <div class="box-top"></div>
         <img src="http://io.darlic.com/rc/tutorials/drag-and-drop-animation/assets/darlic_logo_full.svg" class="logo" alt="Darlic Logo">
       </div>
-		
-		</div>
-		<div class="clear"></div>
-	</div>
 </body>
 </html>
